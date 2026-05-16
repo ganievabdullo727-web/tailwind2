@@ -7,8 +7,11 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-green-300: oklch(87.1% 0.15 154.449);
+    --color-white: #fff;
     --spacing: 0.25rem;
     --font-weight-bold: 700;
+    --radius-2xl: 1rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -165,26 +168,32 @@
   .m-auto {
     margin: auto;
   }
+  .mt-\[50px\] {
+    margin-top: 50px;
+  }
   .flex {
     display: flex;
   }
   .hidden {
     display: none;
   }
-  .h-100 {
-    height: calc(var(--spacing) * 100);
+  .table {
+    display: table;
   }
-  .h-\[100px\] {
-    height: 100px;
+  .w-\[300px\] {
+    width: 300px;
   }
-  .w-\[100\%\] {
-    width: 100%;
+  .w-fit {
+    width: fit-content;
   }
   .max-w-300 {
     max-width: calc(var(--spacing) * 300);
   }
-  .flex-col {
-    flex-direction: column;
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .items-center {
     align-items: center;
@@ -195,17 +204,21 @@
   .gap-\[20px\] {
     gap: 20px;
   }
-  .gap-\[30px\] {
-    gap: 30px;
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
   }
-  .rounded {
-    border-radius: 0.25rem;
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
-  .rounded-\[30px\] {
-    border-radius: 30px;
+  .bg-\[green\] {
+    background-color: green;
   }
-  .bg-\[blue\] {
-    background-color: blue;
+  .bg-green-300 {
+    background-color: var(--color-green-300);
+  }
+  .p-\[10px\] {
+    padding: 10px;
   }
   .p-\[20px\] {
     padding: 20px;
@@ -213,11 +226,11 @@
   .p-\[30px\] {
     padding: 30px;
   }
-  .p-\[40px\] {
-    padding: 40px;
-  }
   .text-center {
     text-align: center;
+  }
+  .align-middle {
+    vertical-align: middle;
   }
   .text-\[30px\] {
     font-size: 30px;
@@ -226,42 +239,28 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .text-\[ce\] {
-    color: ce;
-  }
-  .text-\[cente\] {
-    color: cente;
-  }
-  .text-\[center\] {
-    color: center;
-  }
-  .text-\[gree\] {
-    color: gree;
-  }
   .text-\[green\] {
     color: green;
   }
-  .text-\[red\] {
-    color: red;
+  .text-\[grey\] {
+    color: grey;
   }
-  .sm\:text-\[blu\] {
-    @media (width >= 40rem) {
-      color: blu;
-    }
+  .text-\[white\] {
+    color: white;
   }
-  .sm\:text-\[blue\] {
-    @media (width >= 40rem) {
-      color: blue;
-    }
+  .text-white {
+    color: var(--color-white);
   }
-  .md\:text-\[green\] {
-    @media (width >= 48rem) {
-      color: green;
-    }
+  .underline {
+    text-decoration-line: underline;
   }
-  .lg\:block {
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .lg\:m-auto {
     @media (width >= 64rem) {
-      display: block;
+      margin: auto;
     }
   }
   .lg\:flex {
@@ -274,40 +273,47 @@
       display: none;
     }
   }
-  .lg\:w-\[300px\] {
+  .lg\:max-w-300 {
     @media (width >= 64rem) {
-      width: 300px;
+      max-width: calc(var(--spacing) * 300);
     }
   }
-  .lg\:flex-row {
+  .lg\:items-center {
     @media (width >= 64rem) {
-      flex-direction: row;
+      align-items: center;
     }
   }
-  .lg\:flex-wrap {
+  .lg\:justify-around {
     @media (width >= 64rem) {
-      flex-wrap: wrap;
+      justify-content: space-around;
     }
   }
-  .lg\:text-\[100px\] {
+  .lg\:justify-between {
     @media (width >= 64rem) {
-      font-size: 100px;
+      justify-content: space-between;
     }
   }
-  .lg\:text-\[orange\] {
-    @media (width >= 64rem) {
-      color: orange;
-    }
-  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
