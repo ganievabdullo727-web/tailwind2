@@ -218,6 +218,9 @@
   .h-\[30px\] {
     height: 30px;
   }
+  .h-\[200px\] {
+    height: 200px;
+  }
   .h-\[300px\] {
     height: 300px;
   }
@@ -354,6 +357,9 @@
   .align-middle {
     vertical-align: middle;
   }
+  .text-\[20px\] {
+    font-size: 20px;
+  }
   .text-\[25px\] {
     font-size: 25px;
   }
@@ -378,6 +384,9 @@
   }
   .text-\[grey\] {
     color: grey;
+  }
+  .text-\[whi\] {
+    color: whi;
   }
   .text-\[white\] {
     color: white;
